@@ -1,178 +1,99 @@
 <!DOCTYPE html>
-<html lang=”zh-CN”>
+<html lang="zh">
 <head>
-<meta charset=”UTF-8”>
-<meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
-<title>猷杰论文冲刺加油站</title>
-<style>
-        :root {
-            --main-blue: #2196F3;
-            --bg-color: #f0f8ff;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>爱的摔角 - 影视推荐</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ff4b5c, #2196f3);
+            color: white;
+            text-align: center;
         }
-
-        Body {
-            Font-family: ‘微软雅黑’, sans-serif;
-            Background: var(--bg-color);
-            Margin: 0;
-            Padding: 20px;
+        header {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            margin-bottom: 30px;
         }
-
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
         .container {
-            Max-width: 800px;
-            Margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
         }
-
-        .header {
-            Text-align: center;
-            Padding: 2rem;
-            Background: linear-gradient(135deg, var(--main-blue), #64B5F6);
-            Color: white;
-            Border-radius: 15px;
-            Margin-bottom: 2rem;
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 10px;
+            transition: transform 0.3s;
         }
-
-        .countdown {
-            Background: white;
-            Padding: 1.5rem;
-            Border-radius: 10px;
-            Box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            Text-align: center;
-            Margin: 1rem 0;
+        .card:hover {
+            transform: scale(1.05);
         }
-
-        .motivation-section {
-            Display: grid;
-            Grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            Gap: 1rem;
-            Margin: 2rem 0;
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+            max-height: 300px;
+            object-fit: cover;
         }
-
-        .motivation-card {
-            Background: white;
-            Padding: 1.5rem;
-            Border-radius: 10px;
-            Border-left: 5px solid var(--main-blue);
-            Transition: transform 0.3s;
+        .card h3 {
+            margin-top: 10px;
+            font-size: 1.2em;
         }
-
-        .motivation-card:hover {
-            Transform: translateY(-5px);
+        footer {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
-
-        .cheer-button {
-            Display: block;
-            Width: 200px;
-            Margin: 2rem auto;
-            Padding: 1rem;
-            Background: var(--main-blue);
-            Color: white;
-            Border: none;
-            Border-radius: 25px;
-            Cursor: pointer;
-            Font-size: 1.1rem;
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+            font-size: 1.5em;
         }
-
-        #messages {
-            Background: white;
-            Padding: 2rem;
-            Border-radius: 10px;
-            Margin-top: 2rem;
-        }
-
-        /* 动画效果 */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .floating-icon {
-            Animation: float 2s ease-in-out infinite;
-        }
-</style>
+    </style>
 </head>
 <body>
-<div class=”container”>
-        <!—标题区 
-        <header class=”header”>
-            <h1> 猷杰论文冲刺倒计时 </h1>
-            <p>全体小伙伴为你打call！</p>
-            <div class=”floating-icon”>️</div>
-        </header>
+    <header>
+        <h1>爱的摔角</h1>
+        <p>精彩影视推荐，带你领略不一样的世界</p>
+    </header>
 
-        <!—倒计时 
-        <div class=”countdown”>
-            <h2>距离DDL还有：<span id=”timer”>00:00:00</span></h2>
+    <div class="container">
+        <div class="card">
+            <img src="https://via.placeholder.com/300x400" alt="电影1">
+            <h3>电影名称 1</h3>
         </div>
-
-        <!—鼓励卡片 
-        <div class=”motivation-section”>
-            <div class=”motivation-card”>
-                <h3> 每日进度</h3>
-                <p>今日目标：完成第三章数据分析 </p>
-            </div>
-            <div class=”motivation-card”>
-                <h3> 灵感加油站</h3>
-                <p>”你引用的文献在图书馆3楼C区”</p>
-            </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x400" alt="电影2">
+            <h3>电影名称 2</h3>
         </div>
-
-        <!—随机鼓励按钮 
-        <button class=”cheer-button” onclick=”showRandomMessage()”>点击获取能量</button>
-
-        <!—留言板 
-        <div id=”messages”>
-            <h2> 小伙伴留言板</h2>
-            <ul id=”messageList”>
-                <li>张伟：咖啡已下单，今晚陪你熬夜！</li>
-                <li>李晓萌：答辩通过请吃饭！</li>
-            </ul>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x400" alt="电影3">
+            <h3>电影名称 3</h3>
         </div>
-</div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x400" alt="电影4">
+            <h3>电影名称 4</h3>
+        </div>
+    </div>
 
-<script>
-        // 倒计时逻辑
-        Const deadline = new Date(‘2024-06-30T23:59:59’);
-        
-        Function updateTimer() {
-            Const now = new Date();
-            Const diff = deadline – now;
-
-            Const hours = Math.floor(diff / 1000 / 60 / 60);
-            Const minutes = Math.floor(diff / 1000 / 60) % 60;
-            Const seconds = Math.floor(diff / 1000) % 60;
-
-            Document.getElementById(‘timer’).innerHTML = 
-                `${hours.toString().padStart(2, ‘0’)}:${minutes.toString().padStart(2, ‘0’)}:${seconds.toString().padStart(2, ‘0’)}`;
-        }
-
-        setInterval(updateTimer, 1000);
-
-        // 随机鼓励语
-        Const messages = [
-            “参考文献格式已检查无误！”,
-            “数据分析部分超赞！”,
-            “导师说目录结构很专业！”,
-            “结论部分可以加个案例！”,
-            “记得保存文档到云端！”
-        ];
-
-        Function showRandomMessage() {
-            Const randomIndex = Math.floor(Math.random() * messages.length);
-            Alert(“ 温馨提示：” + messages[randomIndex]);
-        }
-
-        // 留言功能（简易版）
-        Function addMessage() {
-            Const name = prompt(“输入你的名字：”);
-            Const msg = prompt(“写下你的鼓励：”);
-            If(name && msg) {
-                Const list = document.getElementById(‘messageList’);
-                Const newItem = document.createElement(‘li’);
-                newItem.textContent = `${name}：${msg}`;
-                list.appendChild(newItem);
-            }
-        }
-</script>
+    <footer>
+        <div class="social-links">
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://www.twitter.com" target="_blank">Twitter</a>
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+        </div>
+    </footer>
 </body>
 </html>
