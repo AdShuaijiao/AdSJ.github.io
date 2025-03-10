@@ -24,26 +24,30 @@
             font-size: 2em;
             margin: 0;
         }
-        .nav {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 20px 0;
-        }
-        .nav button {
-            background: #fff;
-            color: #2196f3;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1.1em;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .nav button:hover {
-            background-color: #ff4b5c;
-            color: white;
-        }
+       /* 展示区按钮样式 */
+.nav {
+    display: flex;
+    justify-content: center; /* 按钮居中 */
+    gap: 30px; /* 按钮之间的间距 */
+    margin: 20px 0;
+}
+
+.nav button {
+    background: linear-gradient(to right, #ff4b5c, #2196f3); /* 渐变背景 */
+    color: white;
+    border: none;
+    padding: 15px 30px; /* 增大按钮的内边距 */
+    font-size: 1.2em; /* 增大字体 */
+    font-weight: bold;
+    border-radius: 8px; /* 圆角 */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav button:hover {
+    background: linear-gradient(to right, #ff4b5c, #1e88e5); /* 悬停时改变渐变色 */
+    transform: scale(1.1); /* 按钮悬停时放大 */
+}
         .container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -103,8 +107,8 @@
             right: 20px; /* 距离右侧 */
             width: 50px; /* 按钮大小 */
             height: 50px;
-            background-color: rgba(0, 0, 0, 0.8); /* 透明深色背景 */
-            color: black;
+            background-color: rgba(0, 0, 0, 0.7); /* 透明深色背景 */
+            color: white;
             font-size: 20px; /* 文字/图标大小 */
             border: none;
             border-radius: 50%; /* 变成圆形 */
@@ -117,8 +121,8 @@
 
 /* 按钮悬停效果 */
 .back-to-top:hover {
-    background-color: rgba(0, 0, 0, 0.4);
-    color: black;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
 }
     </style>
 </head>
