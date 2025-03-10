@@ -3,137 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>爱的摔角 - 热血周边商店</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>猷杰论文冲刺加油站</title>
     <style>
-        /* 基础样式 */
         :root {
-            --main-red: #e30613;
-            --dark-bg: #1a1a1a;
+            --main-blue: #2196F3;
+            --bg-color: #f0f8ff;
         }
 
         body {
-            font-family: 'Impact', sans-serif;
-            background: var(--dark-bg);
-            color: white;
+            font-family: '微软雅黑', sans-serif;
+            background: var(--bg-color);
+            margin: 0;
+            padding: 20px;
         }
 
-        /* 头部样式 */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
         .header {
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
-                        url('wrestling-bg.jpg');
-            padding: 2rem;
             text-align: center;
-            border-bottom: 3px solid var(--main-red);
-        }
-
-        /* 平台入口样式 */
-        .platform-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            padding: 1rem;
-            background: #333;
-        }
-
-        .platform-link {
-            color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-
-        .platform-link:hover {
-            color: var(--main-red);
-        }
-
-        /* 商品展示 */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
             padding: 2rem;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-bottom: 3px solid var(--main-red);
-        }
-
-        .product-info {
-            padding: 1rem;
-            color: var(--dark-bg);
-        }
-
-        .buy-button {
-            background: var(--main-red);
+            background: linear-gradient(135deg, var(--main-blue), #64B5F6);
             color: white;
-            padding: 0.8rem 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .countdown {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .motivation-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .motivation-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--main-blue);
+            transition: transform 0.3s;
+        }
+
+        .motivation-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cheer-button {
+            display: block;
+            width: 200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: var(--main-blue);
+            color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 25px;
             cursor: pointer;
-            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        #messages {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        /* 动画效果 */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating-icon {
+            animation: float 2s ease-in-out infinite;
         }
     </style>
 </head>
 <body>
-    <!-- 平台入口 -->
-    <div class="platform-links">
-        <a href="https://taobao.com" class="platform-link" target="_blank">
-            <i class="fab fa-shopify"></i>
-        </a>
-        <a href="https://jd.com" class="platform-link" target="_blank">
-            <i class="icon-jd"></i>
-        </a>
-        <a href="https://douyin.com" class="platform-link" target="_blank">
-            <i class="fab fa-tiktok"></i>
-        </a>
-    </div>
-
-    <!-- 头部 -->
-    <header class="header">
-        <h1>LOVE WRESTLING</h1>
-        <p>热血格斗周边专卖</p>
-    </header>
-
-    <!-- 商品展示 -->
-    <main class="products-grid">
-        <div class="product-card">
-            <img src="product1.jpg" alt="限定版摔角面具" class="product-image">
-            <div class="product-info">
-                <h3>限定版摔角面具</h3>
-                <p>¥ 399.00</p>
-                <button class="buy-button">立即购买</button>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <img src="product2.jpg" alt="签名款格斗手套" class="product-image">
-            <div class="product-info">
-                <h3>签名款格斗手套</h3>
-                <p>¥ 599.00</p>
-                <button class="buy-button">立即购买</button>
-            </div>
-        </div>
-        <!-- 更多商品... -->
-    </main>
-
-    <script>
-        // 商品点击事件
-        document.querySelectorAll('.buy-button').forEach(button => {
-            button.addEventListener('click', () => {
-                // 这里可以添加购买逻辑
-                alert('即将跳转至购买平台');
-            });
-        });
-    </script>
-</body>
-</html>
+    <div class="container">
+        <!-- 标题区 -->
+        <header class="header">
+            <h1>🎓 猷杰论文冲刺倒计时
