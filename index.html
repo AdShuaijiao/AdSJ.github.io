@@ -96,6 +96,25 @@
             font-weight: bold;
             opacity: 0.8;
         }
+        /* 快速回到顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 60px; /* 距离底部 */
+            right: 20px; /* 距离右侧 */
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 10px 15px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none; /* 默认隐藏 */
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        .back-to-top:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: black;
+        }
     </style>
 </head>
 <body>
@@ -191,8 +210,28 @@
         </div>
     </footer>
 
+   <!-- 快速回到顶部按钮 -->
+    <button class="back-to-top" onclick="scrollToTop()">↑ 回到顶部</button>
+
     <!-- 左下角水印 -->
     <div class="watermark">爱的摔角</div>
+
+    <script>
+        // 监听滚动事件，控制“回到顶部”按钮的显示
+        window.onscroll = function() {
+            let button = document.querySelector(".back-to-top");
+            if (document.documentElement.scrollTop > 300) { // 滚动超过 300px 显示
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        };
+
+        // 平滑滚动回顶部
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
     
     <script>
         function showCategory(category) {
