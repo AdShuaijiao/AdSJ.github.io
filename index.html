@@ -1,99 +1,172 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang=”zh”>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>爱的摔角</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to right, #ff4b5c, #2196f3);
-            color: white;
-            text-align: center;
+<meta charset=”UTF-8”>
+<meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
+<meta http-equiv=”X-UA-Compatible” content=”ie=edge”>
+<title>爱的摔角</title>
+<style>
+        Body {
+            Font-family: Arial, sans-serif;
+            Margin: 0;
+            Padding: 0;
+            Background: linear-gradient(to right, #ff4b5c, #2196f3); /* 强制使用渐变背景 */
+            Color: white;
+            Text-align: center;
         }
-        header {
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            margin-bottom: 30px;
+        Header {
+            Background-color: rgba(0, 0, 0, 0.6);
+            Padding: 20px;
+            Margin-bottom: 30px;
         }
-        header h1 {
-            font-size: 2.5em;
-            margin: 0;
+        Header h1 {
+            Font-size: 2.5em;
+            Margin: 0;
+        }
+        .nav {
+            Display: flex;
+            Justify-content: center;
+            Gap: 30px;
+            Margin: 20px 0;
+        }
+        .nav button {
+            Background: #fff;
+            Color: #2196f3;
+            Border: none;
+            Padding: 10px 20px;
+            Font-size: 1.1em;
+            Border-radius: 5px;
+            Cursor: pointer;
+            Transition: background-color 0.3s;
+        }
+        .nav button:hover {
+            Background-color: #ff4b5c;
+            Color: white;
         }
         .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 20px;
+            Display: grid;
+            Grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            Gap: 20px;
+            Padding: 20px;
+            Display: none;
         }
         .card {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px;
-            border-radius: 10px;
-            transition: transform 0.3s;
+            Background: rgba(255, 255, 255, 0.2);
+            Padding: 10px;
+            Border-radius: 10px;
+            Transition: transform 0.3s;
         }
         .card:hover {
-            transform: scale(1.05);
+            Transform: scale(1.05);
         }
         .card img {
-            width: 100%;
-            border-radius: 8px;
-            max-height: 300px;
-            object-fit: cover;
+            Width: 100%;
+            Border-radius: 8px;
+            Max-height: 300px;
+            Object-fit: cover;
         }
         .card h3 {
-            margin-top: 10px;
-            font-size: 1.2em;
+            Margin-top: 10px;
+            Font-size: 1.2em;
         }
-        footer {
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        Footer {
+            Background-color: rgba(0, 0, 0, 0.6);
+            Padding: 20px;
+            Position: fixed;
+            Bottom: 0;
+            Width: 100%;
         }
         .social-links a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: white;
-            font-size: 1.5em;
+            Margin: 0 10px;
+            Text-decoration: none;
+            Color: white;
+            Font-size: 1.5em;
         }
-    </style>
+</style>
 </head>
 <body>
-    <header>
+<header>
         <h1>爱的摔角</h1>
         <p>终于等到你，更多精彩内容即将更新</p>
-    </header>
+</header>
 
-    <div class="container">
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="电影1">
-            <h3>电影名称 1</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="电影2">
-            <h3>电影名称 2</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="电影3">
-            <h3>电影名称 3</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="电影4">
-            <h3>电影名称 4</h3>
-        </div>
-    </div>
+<div class=”nav”>
+        <button onclick=”showCategory(‘action’)”>专属系列</button>
+        <button onclick=”showCategory(‘comedy’)”>OnlyFans</button>
+        <button onclick=”showCategory(‘drama’)”>其他内容</button>
+</div>
 
-    <footer>
-        <div class="social-links">
-            <a href="https://www.douyin.com/user/MS4wLjABAAAAB3uK4f9JIyuqaG1XTv3L-v--ABcLYtgsFOTGcfRoUmE?from_tab_name=main" target="_blank">抖音</a>
+<!—专属系列区域 
+<div id=”action” class=”container”>
+        <div class=”card”>
+            <img src=https://via.placeholder.com/300x400 alt=”动作片1”>
+            <h3>动作片名称 1</h3>
+        </div>
+        <div class=”card”>
+            <img src=https://via.placeholder.com/300x400 alt=”动作片2”>
+            <h3>动作片名称 2</h3>
+        </div>
+        <div class=”card”>
+            <img src=https://via.placeholder.com/300x400 alt=”动作片3”>
+            <h3>动作片名称 3</h3>
+        </div>
+</div>
+
+<!—喜剧片区域 
+<div id=”comedy” class=”container”>
+        <div class=”card”>
+            <img src=https://via.placeholder.com/300x400 alt=”喜剧片1”>
+            <h3>喜剧片名称 1</h3>
+        </div>
+        <div class=”card”>
+            <img src=https://via.placeholder.com/300x400 alt=”喜剧片2”>
+            <h3>喜剧片名称 2</h3>
+        </div>
+        <div class=”card”>
+            <img src=https://via.placeholder.com/300x400 alt=”喜剧片3”>
+            <h3>喜剧片名称 3</h3>
+        </div>
+</div>
+
+<!—剧情片区域 
+<div id=”drama” class=”container”>
+        <div class=”card”>
+            <img src=https://via.placeholder.com/300x400 alt=”剧情片1”>
+            <h3>剧情片名称 1</h3>
+        </div>
+        <div class=”card”>
+            <img src=https://via.placeholder.com/300x400 alt=”剧情片2”>
+            <h3>剧情片名称 2</h3>
+        </div>
+        <div class=”card”>
+            <img src=https://via.placeholder.com/300x400 alt=”剧情片3”>
+            <h3>剧情片名称 3</h3>
+        </div>
+</div>
+
+<footer>
+        <div class=”social-links”>
+           <a href="https://www.douyin.com/user/MS4wLjABAAAAB3uK4f9JIyuqaG1XTv3L-v--ABcLYtgsFOTGcfRoUmE?from_tab_name=main" target="_blank">抖音</a>
             <a href="https://space.bilibili.com/3494380151244889" target="_blank">bilibili</a>
             <a href="https://www.xiaohongshu.com/user/profile/62e72d2a000000001f006507" target="_blank">小红书</a>
         </div>
-    </footer>
+</footer>
+
+<script>
+        Function showCategory(category) {
+            // 隐藏所有板块
+            Const containers = document.querySelectorAll(‘.container’);
+            Containers.forEach(container => {
+                Container.style.display = ‘none’;
+            });
+
+            // 显示选定的板块
+            Const selectedCategory = document.getElementById(category);
+            selectedCategory.style.display = ‘grid’;
+        }
+        
+        // 默认显示第一个类别
+        showCategory(‘action’);
+</script>
 </body>
 </html>
