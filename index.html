@@ -3,85 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>爱的摔角</title>
+    <title>爱的摔角 - 热血周边商店</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* 基础样式 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
+        :root {
+            --main-red: #e30613;
+            --dark-bg: #1a1a1a;
         }
 
         body {
-            line-height: 1.6;
-            padding: 20px;
-            background: #f5f5f5;
-        }
-
-        /* 导航栏 */
-        .navbar {
-            background: #333;
+            font-family: 'Impact', sans-serif;
+            background: var(--dark-bg);
             color: white;
-            padding: 1rem;
-            margin-bottom: 2rem;
         }
 
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin-right: 20px;
-        }
-
-        /* 文章列表 */
-        .post {
-            background: white;
+        /* 头部样式 */
+        .header {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+                        url('wrestling-bg.jpg');
             padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .post h2 {
-            color: #333;
-            margin-bottom: 1rem;
-        }
-
-        .post-date {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        /* 页脚 */
-        footer {
             text-align: center;
-            padding: 2rem;
+            border-bottom: 3px solid var(--main-red);
+        }
+
+        /* 平台入口样式 */
+        .platform-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem;
             background: #333;
+        }
+
+        .platform-link {
             color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .platform-link:hover {
+            color: var(--main-red);
+        }
+
+        /* 商品展示 */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--main-red);
+        }
+
+        .product-info {
+            padding: 1rem;
+            color: var(--dark-bg);
+        }
+
+        .buy-button {
+            background: var(--main-red);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="/">首页</a>
-        <a href="/about.html">关于我</a>
-        <a href="/contact.html">联系</a>
-    </nav>
-
-    <div class="post">
-        <h2>我的第一篇文章</h2>
-        <p class="post-date">2024年3月1日</p>
-        <p>这里是文章内容示例。你可以在这里写技术分享、生活感悟或任何想记录的内容...</p>
+    <!-- 平台入口 -->
+    <div class="platform-links">
+        <a href="https://taobao.com" class="platform-link" target="_blank">
+            <i class="fab fa-shopify"></i>
+        </a>
+        <a href="https://jd.com" class="platform-link" target="_blank">
+            <i class="icon-jd"></i>
+        </a>
+        <a href="https://douyin.com" class="platform-link" target="_blank">
+            <i class="fab fa-tiktok"></i>
+        </a>
     </div>
 
-    <div class="post">
-        <h2>如何学习编程</h2>
-        <p class="post-date">2024年2月25日</p>
-        <p>分享我的学习路径和资源推荐...</p>
-    </div>
+    <!-- 头部 -->
+    <header class="header">
+        <h1>LOVE WRESTLING</h1>
+        <p>热血格斗周边专卖</p>
+    </header>
 
-    <footer>
-        <p>© 2024 我的个人博客 | Powered by HTML/CSS</p>
-    </footer>
+    <!-- 商品展示 -->
+    <main class="products-grid">
+        <div class="product-card">
+            <img src="product1.jpg" alt="限定版摔角面具" class="product-image">
+            <div class="product-info">
+                <h3>限定版摔角面具</h3>
+                <p>¥ 399.00</p>
+                <button class="buy-button">立即购买</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="product2.jpg" alt="签名款格斗手套" class="product-image">
+            <div class="product-info">
+                <h3>签名款格斗手套</h3>
+                <p>¥ 599.00</p>
+                <button class="buy-button">立即购买</button>
+            </div>
+        </div>
+        <!-- 更多商品... -->
+    </main>
+
+    <script>
+        // 商品点击事件
+        document.querySelectorAll('.buy-button').forEach(button => {
+            button.addEventListener('click', () => {
+                // 这里可以添加购买逻辑
+                alert('即将跳转至购买平台');
+            });
+        });
+    </script>
 </body>
 </html>
