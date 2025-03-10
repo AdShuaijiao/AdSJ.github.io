@@ -1,82 +1,82 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang=”zh-CN”>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>猷杰论文冲刺加油站</title>
-    <style>
+<meta charset=”UTF-8”>
+<meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
+<title>猷杰论文冲刺加油站</title>
+<style>
         :root {
             --main-blue: #2196F3;
             --bg-color: #f0f8ff;
         }
 
-        body {
-            font-family: '微软雅黑', sans-serif;
-            background: var(--bg-color);
-            margin: 0;
-            padding: 20px;
+        Body {
+            Font-family: ‘微软雅黑’, sans-serif;
+            Background: var(--bg-color);
+            Margin: 0;
+            Padding: 20px;
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            Max-width: 800px;
+            Margin: 0 auto;
         }
 
         .header {
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, var(--main-blue), #64B5F6);
-            color: white;
-            border-radius: 15px;
-            margin-bottom: 2rem;
+            Text-align: center;
+            Padding: 2rem;
+            Background: linear-gradient(135deg, var(--main-blue), #64B5F6);
+            Color: white;
+            Border-radius: 15px;
+            Margin-bottom: 2rem;
         }
 
         .countdown {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            text-align: center;
-            margin: 1rem 0;
+            Background: white;
+            Padding: 1.5rem;
+            Border-radius: 10px;
+            Box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            Text-align: center;
+            Margin: 1rem 0;
         }
 
         .motivation-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
+            Display: grid;
+            Grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            Gap: 1rem;
+            Margin: 2rem 0;
         }
 
         .motivation-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 5px solid var(--main-blue);
-            transition: transform 0.3s;
+            Background: white;
+            Padding: 1.5rem;
+            Border-radius: 10px;
+            Border-left: 5px solid var(--main-blue);
+            Transition: transform 0.3s;
         }
 
         .motivation-card:hover {
-            transform: translateY(-5px);
+            Transform: translateY(-5px);
         }
 
         .cheer-button {
-            display: block;
-            width: 200px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background: var(--main-blue);
-            color: white;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 1.1rem;
+            Display: block;
+            Width: 200px;
+            Margin: 2rem auto;
+            Padding: 1rem;
+            Background: var(--main-blue);
+            Color: white;
+            Border: none;
+            Border-radius: 25px;
+            Cursor: pointer;
+            Font-size: 1.1rem;
         }
 
         #messages {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            margin-top: 2rem;
+            Background: white;
+            Padding: 2rem;
+            Border-radius: 10px;
+            Margin-top: 2rem;
         }
 
         /* 动画效果 */
@@ -87,12 +87,92 @@
         }
 
         .floating-icon {
-            animation: float 2s ease-in-out infinite;
+            Animation: float 2s ease-in-out infinite;
         }
-    </style>
+</style>
 </head>
 <body>
-    <div class="container">
-        <!-- 标题区 -->
-        <header class="header">
-            <h1>🎓 猷杰论文冲刺倒计时
+<div class=”container”>
+        <!—标题区 
+        <header class=”header”>
+            <h1> 猷杰论文冲刺倒计时 </h1>
+            <p>全体小伙伴为你打call！</p>
+            <div class=”floating-icon”>️</div>
+        </header>
+
+        <!—倒计时 
+        <div class=”countdown”>
+            <h2>距离DDL还有：<span id=”timer”>00:00:00</span></h2>
+        </div>
+
+        <!—鼓励卡片 
+        <div class=”motivation-section”>
+            <div class=”motivation-card”>
+                <h3> 每日进度</h3>
+                <p>今日目标：完成第三章数据分析 </p>
+            </div>
+            <div class=”motivation-card”>
+                <h3> 灵感加油站</h3>
+                <p>”你引用的文献在图书馆3楼C区”</p>
+            </div>
+        </div>
+
+        <!—随机鼓励按钮 
+        <button class=”cheer-button” onclick=”showRandomMessage()”>点击获取能量</button>
+
+        <!—留言板 
+        <div id=”messages”>
+            <h2> 小伙伴留言板</h2>
+            <ul id=”messageList”>
+                <li>张伟：咖啡已下单，今晚陪你熬夜！</li>
+                <li>李晓萌：答辩通过请吃饭！</li>
+            </ul>
+        </div>
+</div>
+
+<script>
+        // 倒计时逻辑
+        Const deadline = new Date(‘2024-06-30T23:59:59’);
+        
+        Function updateTimer() {
+            Const now = new Date();
+            Const diff = deadline – now;
+
+            Const hours = Math.floor(diff / 1000 / 60 / 60);
+            Const minutes = Math.floor(diff / 1000 / 60) % 60;
+            Const seconds = Math.floor(diff / 1000) % 60;
+
+            Document.getElementById(‘timer’).innerHTML = 
+                `${hours.toString().padStart(2, ‘0’)}:${minutes.toString().padStart(2, ‘0’)}:${seconds.toString().padStart(2, ‘0’)}`;
+        }
+
+        setInterval(updateTimer, 1000);
+
+        // 随机鼓励语
+        Const messages = [
+            “参考文献格式已检查无误！”,
+            “数据分析部分超赞！”,
+            “导师说目录结构很专业！”,
+            “结论部分可以加个案例！”,
+            “记得保存文档到云端！”
+        ];
+
+        Function showRandomMessage() {
+            Const randomIndex = Math.floor(Math.random() * messages.length);
+            Alert(“ 温馨提示：” + messages[randomIndex]);
+        }
+
+        // 留言功能（简易版）
+        Function addMessage() {
+            Const name = prompt(“输入你的名字：”);
+            Const msg = prompt(“写下你的鼓励：”);
+            If(name && msg) {
+                Const list = document.getElementById(‘messageList’);
+                Const newItem = document.createElement(‘li’);
+                newItem.textContent = `${name}：${msg}`;
+                list.appendChild(newItem);
+            }
+        }
+</script>
+</body>
+</html>
