@@ -1,172 +1,196 @@
 <!DOCTYPE html>
 <html lang=”zh”>
 <head>
-<meta charset=”UTF-8”>
-<meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
-<meta http-equiv=”X-UA-Compatible” content=”ie=edge”>
-<title>爱的摔角 – 影视推荐</title>
-<style>
-        Body {
-            Font-family: Arial, sans-serif;
-            Margin: 0;
-            Padding: 0;
-            Background: linear-gradient(to right, #ff4b5c, #2196f3); /* 强制使用渐变背景 */
-            Color: white;
-            Text-align: center;
-        }
-        Header {
-            Background-color: rgba(0, 0, 0, 0.6);
-            Padding: 20px;
-            Margin-bottom: 30px;
-        }
-        Header h1 {
-            Font-size: 2.5em;
-            Margin: 0;
-        }
-        .nav {
-            Display: flex;
-            Justify-content: center;
-            Gap: 30px;
-            Margin: 20px 0;
-        }
-        .nav button {
-            Background: #fff;
-            Color: #2196f3;
-            Border: none;
-            Padding: 10px 20px;
-            Font-size: 1.1em;
-            Border-radius: 5px;
-            Cursor: pointer;
-            Transition: background-color 0.3s;
-        }
-        .nav button:hover {
-            Background-color: #ff4b5c;
-            Color: white;
-        }
-        .container {
-            Display: grid;
-            Grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            Gap: 20px;
-            Padding: 20px;
-            Display: none;
-        }
-        .card {
-            Background: rgba(255, 255, 255, 0.2);
-            Padding: 10px;
-            Border-radius: 10px;
-            Transition: transform 0.3s;
-        }
-        .card:hover {
-            Transform: scale(1.05);
-        }
-        .card img {
-            Width: 100%;
-            Border-radius: 8px;
-            Max-height: 300px;
-            Object-fit: cover;
-        }
-        .card h3 {
-            Margin-top: 10px;
-            Font-size: 1.2em;
-        }
-        Footer {
-            Background-color: rgba(0, 0, 0, 0.6);
-            Padding: 20px;
-            Position: fixed;
-            Bottom: 0;
-            Width: 100%;
-        }
-        .social-links a {
-            Margin: 0 10px;
-            Text-decoration: none;
-            Color: white;
-            Font-size: 1.5em;
-        }
-</style>
+  <meta charset=”UTF-8”>
+  <meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
+  <title>爱的摔角</title>
+  <style>
+Body {
+      Font-family: Arial, sans-serif;
+      Margin: 0;
+      Padding: 0;
+      Background: linear-gradient(to right, #FF4B2B, #FF416C); /* Red to Blue Gradient */
+      Color: white;
+}
+Header {
+      Padding: 20px;
+      Display: flex;
+      Justify-content: space-between;
+      Align-items: center;
+      Background: rgba(0, 0, 0, 0.5);
+}
+Header .logo {
+      Font-size: 24px;
+      Font-weight: bold;
+}
+Header nav a {
+      Margin: 0 10px;
+      Text-decoration: none;
+      Color: white;
+      Font-size: 18px;
+}
+.search-bar input {
+      Padding: 8px;
+      Font-size: 16px;
+      Width: 200px;
+}
+.banner {
+      Padding: 100px 0;
+      Text-align: center;
+      Background: rgba(0, 0, 0, 0.5);
+}
+.banner h1 {
+      Font-size: 48px;
+}
+.content-section {
+      Margin: 40px 0;
+      Padding: 20px;
+      Background: rgba(0, 0, 0, 0.7);
+      Border-radius: 10px;
+}
+.content-section h2 {
+      Font-size: 32px;
+}
+.content-carousel {
+      Display: flex;
+      Justify-content: center;
+      Overflow-x: scroll;
+      Gap: 20px;
+}
+.content-item {
+      Width: 200px;
+      Height: 300px;
+      Background-color: #222;
+      Border-radius: 10px;
+      Text-align: center;
+      Padding: 20px;
+}
+.content-item img {
+      Max-width: 100%;
+      Border-radius: 8px;
+}
+Footer {
+      Padding: 20px;
+      Background: rgba(0, 0, 0, 0.5);
+      Text-align: center;
+}
+Footer a {
+      Margin: 0 10px;
+      Color: white;
+      Text-decoration: none;
+}
+  </style>
 </head>
 <body>
-<header>
-        <h1>爱的摔角</h1>
-        <p>精彩影视推荐，带你领略不一样的世界</p>
-</header>
+  <!—Header 
+  <header>
+<div class=”logo”>爱的摔角</div>
+<nav>
+      <a href=”#exclusive”>专属系列</a>
+      <a href=”#onlyfans”>OnlyFans</a>
+      <a href=”#other-content”>其他内容</a>
+      <div class=”search-bar”>
+        <input type=”text” placeholder=”搜索…”>
+      </div>
+</nav>
+  </header>
 
-<div class=”nav”>
-        <button onclick=”showCategory(‘action’)”>动作片</button>
-        <button onclick=”showCategory(‘comedy’)”>喜剧片</button>
-        <button onclick=”showCategory(‘drama’)”>剧情片</button>
+  <!—Main Banner 
+  <div class=”banner”>
+<h1>欢迎来到 爱的摔角</h1>
+<p>展示最热的影视作品</p>
+  </div>
+
+  <!—Recommended Content 
+  <div class=”content-section” id=”recommended”>
+<h2>推荐内容</h2>
+<div class=”content-carousel”>
+      <!—Carousel Items (sample images and content) 
+      <div class=”content-item”>
+        <img src=https://via.placeholder.com/200x300 alt=”推荐内容 1”>
+        <p>推荐内容 1</p>
+      </div>
+      <div class=”content-item”>
+        <img src=https://via.placeholder.com/200x300 alt=”推荐内容 2”>
+        <p>推荐内容 2</p>
+      </div>
+      <div class=”content-item”>
+        <img src=https://via.placeholder.com/200x300 alt=”推荐内容 3”>
+        <p>推荐内容 3</p>
+      </div>
 </div>
+  </div>
 
-<!—动作片区域 
-<div id=”action” class=”container”>
-        <div class=”card”>
-            <img src=https://via.placeholder.com/300x400 alt=”动作片1”>
-            <h3>动作片名称 1</h3>
-        </div>
-        <div class=”card”>
-            <img src=https://via.placeholder.com/300x400 alt=”动作片2”>
-            <h3>动作片名称 2</h3>
-        </div>
-        <div class=”card”>
-            <img src=https://via.placeholder.com/300x400 alt=”动作片3”>
-            <h3>动作片名称 3</h3>
-        </div>
+  <!—Exclusive Series Section 
+  <div class=”content-section” id=”exclusive”>
+<h2>专属系列</h2>
+<nav>
+      <a href=”#series-1”>系列一</a>
+      <a href=”#series-2”>系列二</a>
+      <a href=”#series-3”>系列三</a>
+</nav>
+<div class=”content-carousel”>
+      <div class=”content-item”>
+        <img src=https://via.placeholder.com/200x300 alt=”系列一”>
+        <p>系列一</p>
+      </div>
+      <div class=”content-item”>
+        <img src=https://via.placeholder.com/200x300 alt=”系列二”>
+        <p>系列二</p>
+      </div>
+      <div class=”content-item”>
+        <img src=https://via.placeholder.com/200x300 alt=”系列三”>
+        <p>系列三</p>
+      </div>
 </div>
+  </div>
 
-<!—喜剧片区域 
-<div id=”comedy” class=”container”>
-        <div class=”card”>
-            <img src=https://via.placeholder.com/300x400 alt=”喜剧片1”>
-            <h3>喜剧片名称 1</h3>
-        </div>
-        <div class=”card”>
-            <img src=https://via.placeholder.com/300x400 alt=”喜剧片2”>
-            <h3>喜剧片名称 2</h3>
-        </div>
-        <div class=”card”>
-            <img src=https://via.placeholder.com/300x400 alt=”喜剧片3”>
-            <h3>喜剧片名称 3</h3>
-        </div>
+  <!—OnlyFans Section 
+  <div class=”content-section” id=”onlyfans”>
+<h2>OnlyFans</h2>
+<div class=”content-carousel”>
+      <div class=”content-item”>
+        <img src=https://via.placeholder.com/200x300 alt=”OnlyFans 1”>
+        <p>OnlyFans 1</p>
+      </div>
+      <div class=”content-item”>
+        <img src=https://via.placeholder.com/200x300 alt=”OnlyFans 2”>
+        <p>OnlyFans 2</p>
+      </div>
 </div>
+  </div>
 
-<!—剧情片区域 
-<div id=”drama” class=”container”>
-        <div class=”card”>
-            <img src=https://via.placeholder.com/300x400 alt=”剧情片1”>
-            <h3>剧情片名称 1</h3>
-        </div>
-        <div class=”card”>
-            <img src=https://via.placeholder.com/300x400 alt=”剧情片2”>
-            <h3>剧情片名称 2</h3>
-        </div>
-        <div class=”card”>
-            <img src=https://via.placeholder.com/300x400 alt=”剧情片3”>
-            <h3>剧情片名称 3</h3>
-        </div>
+  <!—Other Content Section 
+  <div class=”content-section” id=”other-content”>
+<h2>其他内容</h2>
+<nav>
+      <a href=”#action”>动作片</a>
+      <a href=”#romance”>情感片</a>
+      <a href=”#comedy”>喜剧片</a>
+</nav>
+<div class=”content-carousel”>
+      <div class=”content-item”>
+        <img src=https://via.placeholder.com/200x300 alt=”动作片”>
+        <p>动作片</p>
+      </div>
+      <div class=”content-item”>
+        <img src=https://via.placeholder.com/200x300 alt=”情感片”>
+        <p>情感片</p>
+      </div>
+      <div class=”content-item”>
+        <img src=https://via.placeholder.com/200x300 alt=”喜剧片”>
+        <p>喜剧片</p>
+      </div>
 </div>
+  </div>
 
-<footer>
-        <div class=”social-links”>
-            <a href=https://www.instagram.com target=”_blank”>Instagram</a>
-            <a href=https://www.twitter.com target=”_blank”>Twitter</a>
-            <a href=https://www.facebook.com target=”_blank”>Facebook</a>
-        </div>
-</footer>
-
-<script>
-        Function showCategory(category) {
-            // 隐藏所有板块
-            Const containers = document.querySelectorAll(‘.container’);
-            Containers.forEach(container => {
-                Container.style.display = ‘none’;
-            });
-
-            // 显示选定的板块
-            Const selectedCategory = document.getElementById(category);
-            selectedCategory.style.display = ‘grid’;
-        }
-        
-        // 默认显示第一个类别
-        showCategory(‘action’);
-</script>
+  <!—Footer 
+  <footer>
+<div>
+      <a href=https://www.douyin.com/user/MS4wLjABAAAAB3uK4f9JIyuqaG1XTv3L-v--ABcLYtgsFOTGcfRoUmE?from_tab_name=main>抖音</a>
+      <a href=https://space.bilibili.com/3494380151244889>B站</a>
+      <a href=https://www.xiaohongshu.com/user/profile/62e72d2a000000001f006507>小红书</a>
+</div>
+  </footer>
 </body>
 </html>
