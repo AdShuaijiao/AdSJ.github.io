@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>爱的摔角 - 影视推荐</title>
+    <title>爱的摔角</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,32 +23,11 @@
             font-size: 2.5em;
             margin: 0;
         }
-        .nav {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 20px 0;
-        }
-        .nav button {
-            background: #fff;
-            color: #2196f3;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1.1em;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .nav button:hover {
-            background-color: #ff4b5c;
-            color: white;
-        }
         .container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             padding: 20px;
-            display: none;
         }
         .card {
             background: rgba(255, 255, 255, 0.2);
@@ -87,86 +66,34 @@
 <body>
     <header>
         <h1>爱的摔角</h1>
-        <p>精彩影视推荐，带你领略不一样的世界</p>
+        <p>终于等到你，更多精彩内容即将更新</p>
     </header>
 
-    <div class="nav">
-        <button onclick="showCategory('action')">动作片</button>
-        <button onclick="showCategory('comedy')">喜剧片</button>
-        <button onclick="showCategory('drama')">剧情片</button>
-    </div>
-
-    <!-- 动作片区域 -->
-    <div id="action" class="container">
+    <div class="container">
         <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="动作片1">
-            <h3>动作片名称 1</h3>
+            <img src="https://via.placeholder.com/300x400" alt="电影1">
+            <h3>电影名称 1</h3>
         </div>
         <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="动作片2">
-            <h3>动作片名称 2</h3>
+            <img src="https://via.placeholder.com/300x400" alt="电影2">
+            <h3>电影名称 2</h3>
         </div>
         <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="动作片3">
-            <h3>动作片名称 3</h3>
-        </div>
-    </div>
-
-    <!-- 喜剧片区域 -->
-    <div id="comedy" class="container">
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="喜剧片1">
-            <h3>喜剧片名称 1</h3>
+            <img src="https://via.placeholder.com/300x400" alt="电影3">
+            <h3>电影名称 3</h3>
         </div>
         <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="喜剧片2">
-            <h3>喜剧片名称 2</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="喜剧片3">
-            <h3>喜剧片名称 3</h3>
-        </div>
-    </div>
-
-    <!-- 剧情片区域 -->
-    <div id="drama" class="container">
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="剧情片1">
-            <h3>剧情片名称 1</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="剧情片2">
-            <h3>剧情片名称 2</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="剧情片3">
-            <h3>剧情片名称 3</h3>
+            <img src="https://via.placeholder.com/300x400" alt="电影4">
+            <h3>电影名称 4</h3>
         </div>
     </div>
 
     <footer>
         <div class="social-links">
-            <a href="https://www.instagram.com" target="_blank">Instagram</a>
-            <a href="https://www.twitter.com" target="_blank">Twitter</a>
-            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.douyin.com/user/MS4wLjABAAAAB3uK4f9JIyuqaG1XTv3L-v--ABcLYtgsFOTGcfRoUmE?from_tab_name=main" target="_blank">抖音</a>
+            <a href="https://space.bilibili.com/3494380151244889" target="_blank">bilibili</a>
+            <a href="https://www.xiaohongshu.com/user/profile/62e72d2a000000001f006507" target="_blank">小红书</a>
         </div>
     </footer>
-
-    <script>
-        function showCategory(category) {
-            // 隐藏所有板块
-            const containers = document.querySelectorAll('.container');
-            containers.forEach(container => {
-                container.style.display = 'none';
-            });
-
-            // 显示选定的板块
-            const selectedCategory = document.getElementById(category);
-            selectedCategory.style.display = 'grid';
-        }
-        
-        // 默认显示第一个类别
-        showCategory('action');
-    </script>
 </body>
 </html>
