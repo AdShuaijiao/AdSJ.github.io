@@ -28,15 +28,15 @@
 .nav {
     display: flex;
     justify-content: center; /* 按钮居中 */
-    gap: 30px; /* 按钮之间的间距 */
+    gap: 20px; /* 按钮之间的间距 */
     margin: 20px 0;
 }
 
 .nav button {
-    background: linear-gradient(to right, #ff4b5c, #2196f3); /* 渐变背景 */
+    background: rgba(255, 255, 255, 0.2); /* 渐变背景 */
     color: white;
     border: none;
-    padding: 15px 30px; /* 增大按钮的内边距 */
+    padding: 15px 15px; /* 增大按钮的内边距 */
     font-size: 1.2em; /* 增大字体 */
     font-weight: bold;
     border-radius: 8px; /* 圆角 */
@@ -45,14 +45,14 @@
 }
 
 .nav button:hover {
-    background: linear-gradient(to right, #ff4b5c, #1e88e5); /* 悬停时改变渐变色 */
+    background: rgba(255, 255, 255, 0.4); /* 悬停时改变渐变色 */
     transform: scale(1.1); /* 按钮悬停时放大 */
 }
         .container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            padding: 20px;
+            padding: 10px;
             display: none;
         }
         .card {
