@@ -1,280 +1,271 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang=”zh”>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>爱的摔角</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to right, #ff4b5c, #2196f3);
-            color: white;
-            text-align: center;
+<meta charset=”UTF-8”>
+<meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
+<title>爱的摔角</title>
+<style>
+        Body {
+            Font-family: Arial, sans-serif;
+            Margin: 0;
+            Padding: 0;
+            Background: linear-gradient(to right, #ff4b5c, #2196f3);
+            Color: white;
+            Text-align: center;
         }
-        header {
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            text-align: left;
-            padding-left: 20px;
-            margin-bottom: 0;
-            padding-bottom: 1px;
-            line-height: 1;
-        }
-        header h1 {
-            font-size: 1.5em;
-            margin: 0;
-        }
-       /* 展示区按钮样式 */
-.nav {
-    display: flex;
-    justify-content: flex-start; /* 按钮居中 */
-    gap: 20px; /* 按钮之间的间距 */
-    margin: 0;
-    position: sticky; 
-    top: 0;
-    z-index: 10; 
-    background: rgba(0, 0, 0, 0.8); 
-    padding-top: 10px; 
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 10px;
-    box-sizing:  border-box; 
-}
 
-.nav button {
-    background: rgba(255, 255, 255, 0.2); /* 渐变背景 */
-    color: white;
-    border: none;
-    margin: 0;
-    padding: 5px 10px; /* 增大按钮的内边距 */
-    font-size: 1em; /* 增大字体 */
-    font-weight: bold;
-    border-radius: 8px; /* 圆角 */
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    z-index: 100;
-}
+        Header {
+            Background-color: rgba(0, 0, 0, 0.8);
+            Padding: 20px;
+            Text-align: left;
+            Padding-left: 20px;
+            Margin-bottom: 0;
+            Padding-bottom: 1px;
+            Line-height: 1;
+        }
 
-.nav button:hover {
-    background: rgba(255, 255, 255, 0.5); /* 悬停时改变渐变色 */
-    transform: scale(1.1); /* 按钮悬停时放大 */
-}
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+        Header h1 {
+            Font-size: 1.5em;
+            Margin: 0;
+        }
+
+        /* 展示区按钮样式 */
+        .nav {
+            Display: flex;
+            Justify-content: flex-start; /* 按钮居中 */
+            Gap: 20px; /* 按钮之间的间距 */
+            Margin: 0;
+            Position: sticky;
+            Top: 0;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.8);
             padding-top: 10px;
-            padding-bottom: 50px;
-            padding-left: 10px;
-            padding-right: 10px;
-            display: none;
-        }
-        .card {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-        .card:hover {
-            transform: scale(1.05);
-        }
-        .card img {
-            width: 100%;
-            border-radius: 8px;
-            max-height: 300px;
-            object-fit: cover;
-        }
-        .card h3 {
-            margin-top: 10px;
-            margin-bottom: 5px;
-            font-size: 1em;
-        }
-        footer {
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        .social-links {
-            text-align: right;
+            padding-left: 20px;
             padding-right: 20px;
+            padding-bottom: 10px;
+            box-sizing:  border-box;
         }
+
+        .nav button {
+            Background: rgba(255, 255, 255, 0.2); /* 渐变背景 */
+            Color: white;
+            Border: none;
+            Margin: 0;
+            Padding: 5px 10px; /* 增大按钮的内边距 */
+            Font-size: 1em; /* 增大字体 */
+            Font-weight: bold;
+            Border-radius: 8px; /* 圆角 */
+            Cursor: pointer;
+            Transition: background-color 0.3s, transform 0.3s;
+            z-index: 100;
+        }
+
+        .nav button.active {
+            Background: rgba(255, 255, 255, 0.5); /* 高亮按钮 */
+            Transform: scale(1.1);
+        }
+
+        .nav button:hover {
+            Background: rgba(255, 255, 255, 0.5); /* 悬停时改变渐变色 */
+            Transform: scale(1.1); /* 按钮悬停时放大 */
+        }
+
+        .container {
+            Display: grid;
+            Grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            Gap: 20px;
+            Padding-top: 10px;
+            Padding-bottom: 50px;
+            Padding-left: 10px;
+            Padding-right: 10px;
+            Display: none;
+        }
+
+        .card {
+            Background: rgba(255, 255, 255, 0.2);
+            Padding: 10px;
+            Border-radius: 10px;
+            Transition: transform 0.3s;
+        }
+
+        .card:hover {
+            Transform: scale(1.05);
+        }
+
+        .card img {
+            Width: 100%;
+            Border-radius: 8px;
+            Max-height: 300px;
+            Object-fit: cover;
+        }
+
+        .card h3 {
+            Margin-top: 10px;
+            Margin-bottom: 5px;
+            Font-size: 1em;
+        }
+
+        Footer {
+            Background-color: rgba(0, 0, 0, 0.8);
+            Padding: 10px;
+            Position: fixed;
+            Bottom: 0;
+            Width: 100%;
+        }
+
+        .social-links {
+            Text-align: right;
+            Padding-right: 20px;
+        }
+
         .social-links a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: white;
-            font-size: 1em;
-      }
+            Margin: 0 10px;
+            Text-decoration: none;
+            Color: white;
+            Font-size: 1em;
+        }
+
         /* 左下角“爱的摔角”字样 */
         .watermark {
-            position: fixed;
-            bottom: 10px;
-            left: 20px;
-            font-size: 18px;
-            font-weight: bold;
-            opacity: 0.8;
+            Position: fixed;
+            Bottom: 10px;
+            Left: 20px;
+            Font-size: 18px;
+            Font-weight: bold;
+            Opacity: 0.8;
         }
+
         /* 快速回到顶部按钮 */
         .back-to-top {
-            position: fixed;
-            bottom: 60px; /* 距离底部 */
-            right: 20px; /* 距离右侧 */
-            width: 50px; /* 按钮大小 */
-            height: 50px;
-            background-color: rgba(0, 0, 0, 0.7); /* 透明深色背景 */
-            color: white;
-            font-size: 20px; /* 文字/图标大小 */
-            border: none;
-            border-radius: 50%; /* 变成圆形 */
-            cursor: pointer;
-            display: none; /* 默认隐藏 */
-            transition: opacity 0.3s, transform 0.3s;
-            text-align: center;
-            line-height: 50px; /* 让文本居中 */
-}
+            Position: fixed;
+            Bottom: 60px; /* 距离底部 */
+            Right: 20px; /* 距离右侧 */
+            Width: 50px; /* 按钮大小 */
+            Height: 50px;
+            Background-color: rgba(0, 0, 0, 0.7); /* 透明深色背景 */
+            Color: white;
+            Font-size: 20px; /* 文字/图标大小 */
+            Border: none;
+            Border-radius: 50%; /* 变成圆形 */
+            Cursor: pointer;
+            Display: none; /* 默认隐藏 */
+            Transition: opacity 0.3s, transform 0.3s;
+            Text-align: center;
+            Line-height: 50px; /* 让文本居中 */
+        }
 
-/* 按钮悬停效果 */
-.back-to-top:hover {
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-}
-    </style>
+        /* 按钮悬停效果 */
+        .back-to-top:hover {
+            Background-color: rgba(0, 0, 0, 0.6);
+            Color: white;
+        }
+
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>爱的摔角</h1>
-        <p>终于等到你，更多精彩内容即将更新</p>
-        <p>赏金猎人私信 QQ：3434801278</p>
-    </header>
 
-    <div class="nav">
-        <button onclick="showCategory('action')">专属系列</button>
-        <button onclick="showCategory('comedy')">OnlyFans</button>
-        <button onclick="showCategory('drama')">其他</button>
-    </div>
+<header>
+<h1>爱的摔角</h1>
+<p>终于等到你，更多精彩内容即将更新</p>
+<p>赏金猎人私信 QQ：3434801278</p>
+</header>
 
-    <!-- 专属 -->
-    <div id="action" class="container">
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="动作片1">
-            <h3>动作片名称 1</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="动作片2">
-            <h3>动作片名称 2</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="动作片3">
-            <h3>动作片名称 3</h3>
-        </div>
-    </div>
+<!—展示区按钮 
+<div class=”nav”>
+<button onclick=”showCategory(‘action’)” id=”action-btn”>专属系列</button>
+<button onclick=”showCategory(‘comedy’)” id=”comedy-btn”>OnlyFans</button>
+<button onclick=”showCategory(‘drama’)” id=”drama-btn”>其他</button>
+</div>
 
-    <!-- Of -->
-    <div id="comedy" class="container">
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="喜剧片1">
-            <h3>喜剧片名称 1</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="喜剧片2">
-            <h3>喜剧片名称 2</h3>
-        </div>
-        <div class="card">
-            <img src="William Seed.jpg" alt="喜剧片3">
-            <h3>William Seed</h3>
-        </div>
-         <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="喜剧片1">
-            <h3>喜剧片名称 4</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="喜剧片2">
-            <h3>喜剧片名称 5</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="喜剧片3">
-            <h3>喜剧片名称 6</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="喜剧片1">
-            <h3>喜剧片名称 7</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="喜剧片2">
-            <h3>喜剧片名称 8</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="喜剧片3">
-            <h3>喜剧片名称 9</h3>
-        </div>
-    </div>
+<!—专属 
+<div id=”action” class=”container”>
+<div class=”card”>
+        <img src=https://via.placeholder.com/300x400 alt=”动作片1”>
+        <h3>动作片名称 1</h3>
+</div>
+<div class=”card”>
+        <img src=https://via.placeholder.com/300x400 alt=”动作片2”>
+        <h3>动作片名称 2</h3>
+</div>
+<div class=”card”>
+        <img src=https://via.placeholder.com/300x400 alt=”动作片3”>
+        <h3>动作片名称 3</h3>
+</div>
+</div>
 
-    <!-- 其他 -->
-    <div id="drama" class="container">
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="剧情片1">
-            <h3>剧情片名称 1</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="剧情片2">
-            <h3>剧情片名称 2</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="剧情片3">
-            <h3>剧情片名称 3</h3>
-        </div>
-    </div>
+<!—Of 
+<div id=”comedy” class=”container”>
+<div class=”card”>
+        <img src=https://via.placeholder.com/300x400 alt=”喜剧片1”>
+        <h3>喜剧片名称 1</h3>
+</div>
+<div class=”card”>
+        <img src=https://via.placeholder.com/300x400 alt=”喜剧片2”>
+        <h3>喜剧片名称 2</h3>
+</div>
+</div>
 
-    <footer>
-        <div class="social-links">
-            <a href="https://space.bilibili.com/3494380151244889" target="_blank">bilibili</a> 
-            <a href="https://www.douyin.com/user/MS4wLjABAAAAB3uK4f9JIyuqaG1XTv3L-v--ABcLYtgsFOTGcfRoUmE?from_tab_name=main" target="_blank">抖音</a>
-            <a href="https://www.xiaohongshu.com/user/profile/62e72d2a000000001f006507" target="_blank">小红书</a>
-        </div>
-    </footer>
+<!—其他 
+<div id=”drama” class=”container”>
+<div class=”card”>
+        <img src=https://via.placeholder.com/300x400 alt=”剧情片1”>
+        <h3>剧情片名称 1</h3>
+</div>
+<div class=”card”>
+        <img src=https://via.placeholder.com/300x400 alt=”剧情片2”>
+        <h3>剧情片名称 2</h3>
+</div>
+</div>
 
-   <!-- 快速回到顶部按钮 -->
-    <button class="back-to-top" onclick="scrollToTop()">↑</button>
+<footer>
+<div class=”social-links”>
+        <a href=https://space.bilibili.com/3494380151244889 target=”_blank”>bilibili</a>
+        <a href=https://www.douyin.com/user/MS4wLjABAAAAB3uK4f9JIyuqaG1XTv3L-v--ABcLYtgsFOTGcfRoUmE?from_tab_name=main target=”_blank”>抖音</a>
+        <a href=https://www.xiaohongshu.com/user/profile/62e72d2a000000001f006507 target=”_blank”>小红书</a>
+</div>
+</footer>
 
-        <!-- 左下角水印 -->
-    <div class="watermark">爱的摔角</div>
+<!—快速回到顶部按钮 
+<button class=”back-to-top” onclick=”scrollToTop()”>↑</button>
 
-    <script>
-        // 监听滚动事件，控制“回到顶部”按钮的显示
-        window.onscroll = function() {
-            let button = document.querySelector(".back-to-top");
-            if (document.documentElement.scrollTop > 300) { // 滚动超过 300px 显示
-                button.style.display = "block";
-            } else {
-                button.style.display = "none";
-            }
-        };
+<!—左下角水印 
+<div class=”watermark”>爱的摔角</div>
 
-        // 平滑滚动回顶部
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+<script>
+// 滚动回到顶部
+Window.onscroll = function() {
+        Let button = document.querySelector(“.back-to-top”);
+        If (document.documentElement.scrollTop > 300) {
+            Button.style.display = “block”;
+        } else {
+            Button.style.display = “none”;
         }
-    </script>
-    
-    <script>
-        function showCategory(category) {
-            // 隐藏所有板块
-            const containers = document.querySelectorAll('.container');
-            containers.forEach(container => {
-                container.style.display = 'none';
-            });
+};
 
-            // 显示选定的板块
-            const selectedCategory = document.getElementById(category);
-            selectedCategory.style.display = 'grid';
-        }
-        
-        // 默认显示第一个类别
-        showCategory('action');
-    </script>
+// 平滑滚动回顶部
+Function scrollToTop() {
+        Window.scrollTo({ top: 0, behavior: ‘smooth’ });
+}
+
+// 显示特定的展示区
+Function showCategory(category) {
+        Const containers = document.querySelectorAll(‘.container’);
+        Containers.forEach(container => {
+            Container.style.display = ‘none’;
+        });
+        Const selectedCategory = document.getElementById(category);
+        selectedCategory.style.display = ‘grid’;
+
+        // 更新按钮高亮
+        Const buttons = document.querySelectorAll(‘.nav button’);
+        Buttons.forEach(button => button.classList.remove(‘active’));
+        Document.getElementById(`${category}-btn`).classList.add(‘active’);
+}
+
+// 默认显示第一个类别
+showCategory(‘action’);
+</script>
+
 </body>
 </html>
