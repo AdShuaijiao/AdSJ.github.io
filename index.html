@@ -20,7 +20,7 @@
             text-align: left;
             padding-left: 20px;
             margin-bottom: 0;
-            padding-bottom: 0px;
+            padding-bottom: 0.1px;
             line-height: 1;
         }
         header h1 {
@@ -32,7 +32,7 @@
     display: flex;
     justify-content: flex-start; /* 按钮居中 */
     gap: 20px; /* 按钮之间的间距 */
-    margin: 0;
+    margin: 20px;
     position: sticky; 
     top: 0;
     z-index: 10; 
@@ -237,6 +237,28 @@
 
    <!-- 快速回到顶部按钮 -->
     <button class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <div class="slider-container">
+    <div class="slider">
+        <div class="slide">
+            <!-- 第一部分内容 -->
+            <h2>展示区 1</h2>
+            <p>这里是展示区 1 的内容。</p>
+        </div>
+        <div class="slide">
+            <!-- 第二部分内容 -->
+            <h2>展示区 2</h2>
+            <p>这里是展示区 2 的内容。</p>
+        </div>
+        <div class="slide">
+            <!-- 第三部分内容 -->
+            <h2>展示区 3</h2>
+            <p>这里是展示区 3 的内容。</p>
+        </div>
+    </div>
+    <button class="prev-btn">‹</button>
+    <button class="next-btn">›</button>
+</div>
 
     <!-- 左下角水印 -->
     <div class="watermark">爱的摔角</div>
