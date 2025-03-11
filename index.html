@@ -266,20 +266,17 @@
     </script>
     
     <script>
-        // 显示特定的展示区
-Function showCategory(category) {
-        Const containers = document.querySelectorAll(‘.container’);
-        Containers.forEach(container => {
-            Container.style.display = ‘none’;
-        });
-        Const selectedCategory = document.getElementById(category);
-        selectedCategory.style.display = ‘grid’;
+       function showCategory(category) {
+            // 隐藏所有板块
+            const containers = document.querySelectorAll('.container');
+            containers.forEach(container => {
+                container.style.display = 'none';
+            });
 
-        // 更新按钮高亮
-        Const buttons = document.querySelectorAll(‘.nav button’);
-        Buttons.forEach(button => button.classList.remove(‘active’));
-        Document.getElementById(`${category}-btn`).classList.add(‘active’);
-}
+            // 显示选定的板块
+            const selectedCategory = document.getElementById(category);
+            selectedCategory.style.display = 'grid';
+        }
         
         // 默认显示第一个类别
         showCategory('action');
