@@ -387,7 +387,8 @@ repeat(auto-fit, minmax(200px, 1fr));
 </script>
 
     <script>
-        let currentSubCategory = 'exclusive1'; // 记录当前的二级菜单，防止切换一级菜单时丢失
+        let currentSubCategory = 'exclusive1'; // 记录当前的二级菜单
+        let currentMainCategory = 'comedy'; // 记录当前的一级菜单
 
         function showCategory(category) {
             document.querySelectorAll('.container').forEach(c => c.style.display = 'none');
@@ -396,6 +397,9 @@ repeat(auto-fit, minmax(200px, 1fr));
             // 更新一级菜单高亮
             document.querySelectorAll('.nav button').forEach(btn => btn.classList.remove('active'));
             document.getElementById(category + '-btn').classList.add('active');
+
+            // 记录当前一级菜单
+            currentMainCategory = category;
 
             // 如果是专属系列，则保持当前二级菜单高亮
             if (category === 'action') {
@@ -414,6 +418,15 @@ repeat(auto-fit, minmax(200px, 1fr));
             if (updateRecord) {
                 currentSubCategory = subCategory;
             }
+
+            // 确保一级菜单仍然保持高亮
+            keepMenuHighlight();
+        }
+
+        function keepMenuHighlight() {
+            // 重新给当前选中的一级菜单加上高亮
+            document.querySelectorAll('.nav button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(currentMainCategory + '-btn').classList.add('active');
         }
 </script>
 </body>
