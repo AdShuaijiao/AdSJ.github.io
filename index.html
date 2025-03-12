@@ -15,7 +15,7 @@
             text-align: center;
         }
         header {
-            background: linear-gradient(to bottom,rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9));
+            background: linear-gradient(to bottom,rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
             padding: 20px;
             text-align: left;
             padding-left: 20px;
@@ -41,7 +41,7 @@
     position: sticky; 
     top: 0;
     z-index: 10; 
-    background: linear-gradient(to bottom,rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+    background: linear-gradient(to bottom,rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.75));
     padding-top: 10px; 
     padding-left: 20px;
     padding-right: 20px;
@@ -54,7 +54,7 @@
     color: white;
     border: none;
     margin: 0;
-    padding: 5px 5px; /* 增大按钮的内边距 */
+    padding: 4px 6px; /* 增大按钮的内边距 */
     font-size: 1em; /* 增大字体 */
     font-weight: bold;
     border-radius: 8px; /* 圆角 */
@@ -98,7 +98,7 @@
             font-size: 1.1em;
         }
         footer {
-            background: linear-gradient(to bottom,rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+            background: linear-gradient(to bottom,rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 1));
             padding: 10px;
             position: fixed;
             bottom: 0;
@@ -157,13 +157,30 @@
     </header>
 
     <div class="nav">
-        <button onclick="showCategory('comedy')">OnlyFans</button>
-        <button onclick="showCategory('action')">专属系列</button>
-        <button onclick="showCategory('drama')">破解软件</button>
+        <button onclick="showCategory('1')">OnlyFans</button>
+        <button onclick="showCategory('2')">厂牌内容</button>
+        <button onclick="showCategory('3')">捷克猎人</button>
+        <button onclick="showCategory('4')">破解软件</button>
     </div>
 
-    <!-- 专属 -->
-    <div id="action" class="container">
+    <!-- 捷克 -->
+    <div id="3" class="container">
+        <div class="card">
+            <img src="https://via.placeholder.com/300x400" alt="">
+            <h3>更新中</h3>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x400" alt="">
+            <h3>更新中</h3>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x400" alt="">
+            <h3>更新中</h3>
+        </div>
+    </div>
+
+    <!-- 厂牌 -->
+    <div id="2" class="container">
         <div class="card">
             <img src="https://via.placeholder.com/300x400" alt="">
             <h3>更新中</h3>
@@ -179,7 +196,7 @@
     </div>
 
     <!-- Of -->
-    <div id="comedy" class="container">
+    <div id="1" class="container">
         <div class="card">
             <img src="Jordan Brandt.jpg" alt="">
             <h3>Jordan Brandt</h3>
@@ -223,7 +240,7 @@
     </div>
 
     <!-- 软件 -->
-    <div id="drama" class="container">
+    <div id="4" class="container">
          <div class="card">
             <img src="Xvideos.jpg" alt="">
             <h3>Xvideos</h3>
@@ -279,7 +296,7 @@
         }
         
         // 默认显示第一个类别
-        showCategory('comedy');
+        showCategory('1');
     </script>
 </body>
 </html>
