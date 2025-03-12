@@ -97,31 +97,6 @@
             margin-bottom: 5px;
             font-size: 1.1em;
         }
-        /* 二级菜单按钮 */
-        .sub-nav {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        .sub-nav button {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            font-size: 1em;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        .sub-nav button:hover, .sub-nav button.active {
-            background: rgba(255, 255, 255, 0.5);
-            transform: scale(1.1);
-        }
-        /* 二级菜单内容 */
-        .sub-container {
-            display: none;
-        }
         footer {
             background-color: rgba(0, 0, 0, 0.8);
             padding: 10px;
@@ -186,48 +161,6 @@
         <button onclick="showCategory('action')">专属系列</button>
         <button onclick="showCategory('drama')">破解软件</button>
     </div>
-
-<!-- 专属系列 展示区 -->
-<div id="action" class="container">
-    <!-- 二级菜单按钮 -->
-    <div class="sub-nav">
-        <button onclick="showSubCategory('exclusive1')" id="exclusive1-btn">捷克猎人</button>
-        <button onclick="showSubCategory('exclusive2')" id="exclusive2-btn">厂牌内容</button>
-    </div>
-
-    <!-- 捷克猎人 -->
-    <div id="exclusive1" class="sub-container">
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>更新中</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>更新中</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>更新中</h3>
-        </div>
-    </div>
-
-    <!-- 厂牌 -->
-    <div id="exclusive2" class="sub-container">
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>更新中</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>更新中</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>更新中</h3>
-        </div>
-    </div>
-
-</div>
 
     <!-- 专属 -->
     <div id="action" class="container">
@@ -345,10 +278,7 @@
             selectedCategory.style.display = 'grid';
         }
         
-        // 如果是专属系列，默认显示第一个二级菜单
-            if (category === 'action') showSubCategory('exclusive1');
-        }
-        // 默认显示onlyfans
+        // 默认显示第一个类别
         showCategory('comedy');
     </script>
 </body>
