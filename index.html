@@ -35,14 +35,17 @@
        /* 展示区按钮样式 */
 .nav {
     display: flex;
-    justify-content: flex-start; /* 按钮靠左 */
-    gap: 20px; /* 按钮之间的间距 */
+    justify-content: flex-start; /* 按钮居中 */
+    gap: 10px; /* 按钮之间的间距 */
     margin: 0;
     position: sticky; 
     top: 0;
     z-index: 10; 
-    background: rgba(0, 0, 0, 0.8); 
-    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0); 
+    padding-top: 10px; 
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
     box-sizing:  border-box; 
 }
 
@@ -60,16 +63,16 @@
     z-index: 100;
 }
 
-.nav button:hover, .nav button.active {
-            background: rgba(255, 255, 255, 0.5);
+.nav button:hover {
+    background: rgba(255, 255, 255, 0.5); /* 悬停时改变渐变色 */
     transform: scale(1.1); /* 按钮悬停时放大 */
 }
         .container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
+            gap: 100px;
             padding-top: 10px;
-            padding-bottom: 52px;
+            padding-bottom: 51px;
             padding-left: 20px;
             padding-right: 20px;
             display: none;
@@ -94,52 +97,6 @@
             margin-bottom: 5px;
             font-size: 1.1em;
         }
-
-/* 二级菜单按钮样式 */
-.sub-nav {
-    display: flex;
-    justify-content: flex-start; /* 按钮靠左 */
-    gap: 15px; /* 按钮之间的间距 */
-    margin: 0;
-    position: sticky; 
-    top: 0;
-    z-index: 10; 
-    background: rgba(0, 0, 0, 0); 
-    padding: 0;
-    box-sizing:  border-box; 
-}
-
-.sub-nav button {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    font-size: 1em;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    margin: 0;
-}
-
-.sub-nav button:hover, .sub-nav button.active {
-    background: rgba(255, 255, 255, 0.5);
-    transform: scale(1.1);
-}
-
-/* 二级菜单内容 */
-.sub-container {
-    display: none; /* 默认隐藏 */
-    display: grid;
-            grid-template-columns:
-repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            padding-top: 0;
-            padding-bottom: 0;
-            padding-left: 0;
-            padding-right: 0;
-            margin: 0;
-}
-
         footer {
             background-color: rgba(0, 0, 0, 0.8);
             padding: 10px;
@@ -205,70 +162,21 @@ repeat(auto-fit, minmax(200px, 1fr));
         <button onclick="showCategory('drama')">破解软件</button>
     </div>
 
-    <!-- 专属系列 -->
-<div id="action" class="container">
-    <!-- 二级菜单按钮 -->
-    <div class="sub-nav">
-        <button onclick="showSubCategory('exclusive1')" id="exclusive1-btn">捷克猎人</button>
-        <button onclick="showSubCategory('exclusive2')" id="exclusive2-btn">厂牌内容</button>
-    </div>
-
-    <!-- 捷克猎人 -->
-    <div id="exclusive1" class="sub-container">
+    <!-- 专属 -->
+    <div id="action" class="container">
         <div class="card">
             <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>1</h3>
+            <h3>更新中</h3>
         </div>
         <div class="card">
             <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>2</h3>
+            <h3>更新中</h3>
         </div>
         <div class="card">
             <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>3</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>1</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>2</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>3</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>1</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>2</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>3</h3>
+            <h3>更新中</h3>
         </div>
     </div>
-
-    <!-- 厂牌内容 -->
-    <div id="exclusive2" class="sub-container">
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>4</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>5</h3>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>6</h3>
-        </div>
-    </div>
-</div>
 
     <!-- Of -->
     <div id="comedy" class="container">
@@ -373,65 +281,5 @@ repeat(auto-fit, minmax(200px, 1fr));
         // 默认显示第一个类别
         showCategory('comedy');
     </script>
-
-<script>
-    function showSubCategory(subCategory) {
-        // 隐藏所有子分类内容
-        const subContainers = document.querySelectorAll('.sub-container');
-        subContainers.forEach(container => {
-            container.style.display = 'none';
-        });
-
-        // 显示选定的子分类内容
-        document.getElementById(subCategory).style.display = 'grid';
-    }
-
-    // 默认显示推荐合集
-    showSubCategory('exclusive1');
-</script>
-
-    <script>
-        let currentSubCategory = 'exclusive1'; // 记录当前的二级菜单
-        let currentMainCategory = 'comedy'; // 记录当前的一级菜单
-
-        function showCategory(category) {
-            document.querySelectorAll('.container').forEach(c => c.style.display = 'none');
-            document.getElementById(category).style.display = 'grid';
-
-            // 更新一级菜单高亮
-            document.querySelectorAll('.nav button').forEach(btn => btn.classList.remove('active'));
-            document.getElementById(category + '-btn').classList.add('active');
-
-            // 记录当前一级菜单
-            currentMainCategory = category;
-
-            // 如果是专属系列，则保持当前二级菜单高亮
-            if (category === 'action') {
-                showSubCategory(currentSubCategory, false);
-            }
-        }
-
-        function showSubCategory(subCategory, updateRecord = true) {
-            document.querySelectorAll('.sub-container').forEach(sc => sc.style.display = 'none');
-            document.getElementById(subCategory).style.display = 'grid';
-
-            document.querySelectorAll('.sub-nav button').forEach(btn => btn.classList.remove('active'));
-            document.getElementById(subCategory + '-btn').classList.add('active');
-
-            // 只有在用户主动点击时才更新当前子分类
-            if (updateRecord) {
-                currentSubCategory = subCategory;
-            }
-
-            // 确保一级菜单仍然保持高亮
-            keepMenuHighlight();
-        }
-
-        function keepMenuHighlight() {
-            // 重新给当前选中的一级菜单加上高亮
-            document.querySelectorAll('.nav button').forEach(btn => btn.classList.remove('active'));
-            document.getElementById(currentMainCategory + '-btn').classList.add('active');
-        }
-</script>
 </body>
 </html>
