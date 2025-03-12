@@ -35,7 +35,7 @@
        /* 展示区按钮样式 */
 .nav {
     display: flex;
-    justify-content: flex-start; /* 按钮居中 */
+    justify-content: flex-start; /* 按钮靠左 */
     gap: 20px; /* 按钮之间的间距 */
     margin: 0;
     position: sticky; 
@@ -63,16 +63,16 @@
     z-index: 100;
 }
 
-.nav button:hover {
+.nav button:hover, .nav button.active {
     background: rgba(255, 255, 255, 0.5); /* 悬停时改变渐变色 */
     transform: scale(1.1); /* 按钮悬停时放大 */
 }
         .container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            gap: 10px;
             padding-top: 10px;
-            padding-bottom: 50px;
+            padding-bottom: 55px;
             padding-left: 10px;
             padding-right: 10px;
             display: none;
@@ -101,16 +101,17 @@
 /* 二级菜单按钮样式 */
 .sub-nav {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* 按钮靠左 */
     gap: 15px;
-    margin-bottom: 15px;
+    position: sticky; 
+    margin-bottom: 0;
 }
 
 .sub-nav button {
     background: rgba(255, 255, 255, 0.2);
     color: white;
     border: none;
-    padding: 8px 15px;
+    padding: 5px 10px;
     font-size: 1em;
     border-radius: 8px;
     cursor: pointer;
@@ -125,6 +126,14 @@
 /* 二级菜单内容 */
 .sub-container {
     display: none; /* 默认隐藏 */
+    display: grid;
+            grid-template-columns:
+repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            padding-top: 10px;
+            padding-bottom: 55px;
+            padding-left: 10px;
+            padding-right: 10px;
 }
 
         footer {
@@ -204,15 +213,15 @@
     <div id="exclusive1" class="sub-container">
         <div class="card">
             <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>更新中</h3>
+            <h3>1</h3>
         </div>
         <div class="card">
             <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>更新中</h3>
+            <h3>2</h3>
         </div>
         <div class="card">
             <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>更新中</h3>
+            <h3>3</h3>
         </div>
     </div>
 
@@ -220,15 +229,15 @@
     <div id="exclusive2" class="sub-container">
         <div class="card">
             <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>更新中</h3>
+            <h3>4</h3>
         </div>
         <div class="card">
             <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>更新中</h3>
+            <h3>5</h3>
         </div>
         <div class="card">
             <img src="https://via.placeholder.com/300x400" alt="">
-            <h3>更新中</h3>
+            <h3>6</h3>
         </div>
     </div>
 </div>
