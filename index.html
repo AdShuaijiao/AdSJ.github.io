@@ -97,6 +97,31 @@
             margin-bottom: 5px;
             font-size: 1.1em;
         }
+        /* 二级菜单按钮 */
+        .sub-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .sub-nav button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            font-size: 1em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .sub-nav button:hover, .sub-nav button.active {
+            background: rgba(255, 255, 255, 0.5);
+            transform: scale(1.1);
+        }
+        /* 二级菜单内容 */
+        .sub-container {
+            display: none;
+        }
         footer {
             background-color: rgba(0, 0, 0, 0.8);
             padding: 10px;
@@ -320,7 +345,10 @@
             selectedCategory.style.display = 'grid';
         }
         
-        // 默认显示第一个类别
+        // 如果是专属系列，默认显示第一个二级菜单
+            if (category === 'action') showSubCategory('exclusive1');
+        }
+        // 默认显示onlyfans
         showCategory('comedy');
     </script>
 </body>
