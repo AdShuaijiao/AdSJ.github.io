@@ -380,15 +380,41 @@ repeat(auto-fit, minmax(200px, 1fr));
 
         // 显示选定的子分类内容
         document.getElementById(subCategory).style.display = 'grid';
-
-        // 更新二级菜单按钮高亮
-        const subButtons = document.querySelectorAll('.sub-nav button');
-        subButtons.forEach(button => button.classList.remove('active'));
-        document.getElementById(subCategory + '-btn').classList.add('active');
     }
 
     // 默认显示推荐合集
     showSubCategory('exclusive1');
+</script>
+
+    <script>
+        let currentSubCategory = 'exclusive1'; // 记录当前的二级菜单，防止切换一级菜单时丢失
+
+        function showCategory(category) {
+            document.querySelectorAll('.container').forEach(c => c.style.display = 'none');
+            document.getElementById(category).style.display = 'grid';
+
+            // 更新一级菜单高亮
+            document.querySelectorAll('.nav button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(category + '-btn').classList.add('active');
+
+            // 如果是专属系列，则保持当前二级菜单高亮
+            if (category === 'action') {
+                showSubCategory(currentSubCategory, false);
+            }
+        }
+
+        function showSubCategory(subCategory, updateRecord = true) {
+            document.querySelectorAll('.sub-container').forEach(sc => sc.style.display = 'none');
+            document.getElementById(subCategory).style.display = 'grid';
+
+            document.querySelectorAll('.sub-nav button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(subCategory + '-btn').classList.add('active');
+
+            // 只有在用户主动点击时才更新当前子分类
+            if (updateRecord) {
+                currentSubCategory = subCategory;
+            }
+        }
 </script>
 </body>
 </html>
