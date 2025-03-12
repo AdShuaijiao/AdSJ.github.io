@@ -99,10 +99,14 @@
 .sub-nav {
     display: flex;
     justify-content: flex-start; /* 按钮靠左 */
-    gap: 15px;
-    padding: 0;
-    position: sticky; 
+    gap: 15px; /* 按钮之间的间距 */
     margin: 0;
+    position: sticky; 
+    top: 0;
+    z-index: 10; 
+    background: rgba(0, 0, 0, 0.8); 
+    padding: 10px 20px;
+    box-sizing:  border-box; 
 }
 
 .sub-nav button {
